@@ -12,7 +12,7 @@ from time import strftime, sleep
 IPADDR_SRC = os.getenv('IPADDR_SRC', 'https://ipv4.icanhazip.com/')
 INTERVAL = os.getenv('INTERVAL', 300)
 APITOKEN = os.getenv('APITOKEN')
-ZONEID = str(os.getenv('DMEZONEID'))
+ZONEID = str(os.getenv('ZONEID'))
 RECORDS = os.getenv('RECORDS')
 TTL = os.getenv('TTL', 1)
 
@@ -25,7 +25,7 @@ SITENAME = os.getenv('SITENAME', 'mysite')
 DEBUG = int(os.getenv('DEBUG', 0))
 
 # --- Globals ---
-VER = '0.2'
+VER = '0.3'
 USER_AGENT = f"cfdns-update.py/{VER}"
 IPCACHE = "/config/ip.cache.txt"
 
