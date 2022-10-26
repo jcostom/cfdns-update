@@ -10,7 +10,7 @@ from time import strftime, sleep
 # --- To be passed in to container ---
 # Required Vars
 IPADDR_SRC = os.getenv('IPADDR_SRC', 'https://ipv4.icanhazip.com/')
-INTERVAL = os.getenv('INTERVAL', 300)
+INTERVAL = int(os.getenv('INTERVAL', 300))
 APITOKEN = os.getenv('APITOKEN')
 ZONEID = str(os.getenv('ZONEID'))
 RECORDS = os.getenv('RECORDS')
@@ -25,7 +25,7 @@ SITENAME = os.getenv('SITENAME', 'mysite')
 DEBUG = int(os.getenv('DEBUG', 0))
 
 # --- Globals ---
-VER = '0.4'
+VER = '0.5'
 USER_AGENT = f"cfdns-update.py/{VER}"
 IPCACHE = "/config/ip.cache.txt"
 
