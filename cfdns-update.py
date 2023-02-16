@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import asyncio
 import logging
 import os
 import os.path
@@ -64,9 +65,9 @@ def update_cache(ip: str) -> int:
     return 0
 
 
-def send_notification(msg: str, chat_id: int, token: str) -> None:
+async def send_notification(msg: str, chat_id: int, token: str) -> None:
     bot = telegram.Bot(token=token)
-    bot.sendMessage(chat_id=chat_id, text=msg)
+    await bot.send_message(chat_id=chat_id, text=msg)
     logger.info('Telegram Group Message Sent')
 
 
@@ -119,7 +120,7 @@ def send_updates(zone_id: str, api_token: str, records: dict,
         if USETELEGRAM:
             now = strftime("%B %d, %Y at %H:%M")
             notification_text = f"[{SITENAME}] {record[0]}.{domain} changed on {now}. New IP == {ip}."  # noqa E501
-            send_notification(notification_text, CHATID, MYTOKEN)
+            asyncio.run(send_notification(notification_text, CHATID, MYTOKEN))
 
 
 def main() -> None:
