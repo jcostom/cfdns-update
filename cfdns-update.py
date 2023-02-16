@@ -25,7 +25,7 @@ SITENAME = os.getenv('SITENAME', 'mysite')
 DEBUG = int(os.getenv('DEBUG', 0))
 
 # --- Globals ---
-VER = '0.5.4'
+VER = '0.5.5'
 USER_AGENT = f"cfdns-update.py/{VER}"
 IPCACHE = "/config/ip.cache.txt"
 
