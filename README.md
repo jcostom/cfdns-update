@@ -2,6 +2,8 @@
 
 Cloudflare DDNS Updater in Python
 
+**Please Note**: I'm not planning on updating this container any longer. Its functionality has been merged into another tool I built that handles DDNS updates for Cloudflare, DNS Made Easy, or DNS-O-Matic. You can find that one at [jcostom/ddnsup](https://github.com/jcostom/ddnsup).
+
 Recently I stood up a new domain and moved a couple over to Cloudflare. With this move I wanted to do some DDNS updates via their API, much like I've been doing with with DNS Made Easy and the jcostom/dme-update container. This is pretty much a direct port of that to the Cloudflare API.
 
 There's a sample docker-compose file included. If you like to roll on your own, for example...
